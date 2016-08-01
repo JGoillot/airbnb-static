@@ -1,0 +1,39 @@
+#footer {
+  background: #263238;
+  color: #CCCCCC;
+  padding: 30px;
+}
+
+#footer .fa {
+    color: #CCC;
+    font-size: 30px;
+    letter-spacing: 20px;
+    transition: color 0.5s ease;
+}
+
+#footer .fa-youtube:hover {
+    color: #bb0000;
+    text-decoration: none;
+
+}
+
+.fa-instagram:hover {
+  background: radial-gradient(circle at 33% 100%, #fed373  4%, #f15245  30%, #d92e7f  62%, #9b36b7  85%, #515ecf );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#footer .fa-facebook:hover {
+    color: #3b5998;
+    text-decoration: none;
+}
+
+#footer .fa-twitter:hover {
+    color: #55acee;
+    text-decoration: none;
+}
+
+#footer p {
+    margin-top: 17px;
+}
+

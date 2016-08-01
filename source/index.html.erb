@@ -2,9 +2,129 @@
 title: Le Wagon Middleman boilerplate
 ---
 
-<div class="welcome text-center padded">
-  <h1>Welcome to Middleman</h1>
-  <p class="doc">
-    <%= link_to "Read Online Documentation", "http://middlemanapp.com/" %>
-  </p>
-</div>
+
+<!-- Your banner code -->
+
+    <div class="banner"">
+      <div class="banner-content">
+        <h1>WELCOME GUYS</h1>
+        <p>Rent unique developper from the best places in the world... </p>
+        <form action="#" class="form-inline">
+          <input type="text" class="form-control input-lg" placeholder="checkin">
+          <input type="text" class="form-control input-lg" placeholder="checkout">
+          <select name="" id="" class="form-control input-lg">
+            <option value="1">1 Charly</option>
+            <option value="2">2 Charly</option>
+            <option value="3">3 Charly</option>
+          </select>
+          <input type="submit" class="btn btn-primary btn-lg" value="Search">
+        </form>
+      </div>
+    </div>
+
+    <!-- Your features code -->
+
+    <div class="container text-center padded features">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "images/globe.png" %>
+          <h2>Discover the world</h2>
+          <p>The earth is your new home.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "images/dollar.png" %>
+          <h2>Pay online</h2>
+          <p>No cash issues anymore.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "images/beer.png" %>
+          <h2>Meet people</h2>
+          <p>Discover new culture and lifestyle.</p>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-3">
+          <%= image_tag "images/heart.png" %>
+          <h2>Share and love</h2>
+          <p>Join a community you will love.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your cards code -->
+    <div class="wrapper-grey padded">
+      <div class="container">
+        <h2 class="text-center">Your next trip</h2>
+        <div class="row">
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
+              <div class="card-category">Paris</div>
+              <div class="card-description">
+                <h2>Seb's home</h2>
+                <p>Charming room with patio</p>
+              </div>
+              <%= image_tag "images/seb.jpg", class: "card-user avatar avatar-large" %>
+              <%= link_to "Card link", "#", class: "card-link" %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://foto.hrsstatic.com/fotos/0/3/920/517/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F2%2F5%2F1%2F4%2F251474%2F251474_f_12599448.jpg/fKSR2uDHu%2BTuEOK2yyDx2A%3D%3D/2048,1361/6/Holiday_Inn_BORDEAUX_-_SUD_PESSAC-Pessac-Wellness_and_fitness_area-13-251474.jpg');">
+              <div class="card-category">Pessac</div>
+              <div class="card-description">
+                <h2>Charly's House</h2>
+                <p>Museum of the king Regex</p>
+              </div>
+              <%= image_tag "https://emoji.slack-edge.com/T02NE0241/charlydev/410545836ec631ef.png", class: "card-user avatar avatar-large" %>
+              <%= link_to "Card link", "#", class: "card-link" %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4">
+            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
+              <div class="card-category">London</div>
+              <div class="card-description">
+                <h2>Romain's home</h2>
+                <p>Nice flat in Piccadilly</p>
+              </div>
+              <%= image_tag "images/romain.jpeg", class: "card-user avatar avatar-large" %>
+              <%= link_to "Card link", "#", class: "card-link" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your newsletter code -->
+
+    <div class="text-center padded" id="newsletter">
+      <h2>Get news from us</h2>
+      <p>Leave us your mail and get news from us</p>
+      <form class="form-inline">
+        <input type="email" placeholder="charly@dev.com" class="form-control">
+        <input type="submit" value="Subscribe" class="btn btn-primary btn-bordered btn-bordered-primary">
+      </form>
+    </div>
+
+    <!-- Your map code -->
+
+    <div id="map" style="width: 100%; height: 400px;"></div>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+
+    <script type="text/javascript">
+    var myLatlng = new google.maps.LatLng(44.8064971,-0.6356594);
+
+    var myOptions = {
+      zoom: 13,
+      center: myLatlng,
+      scrollwheel: false,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#ffffff"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#dde6e8"},{"visibility":"on"}]}] // TODO: replace [] by array from https://snazzymaps.com/
+    };
+
+    var map = new google.maps.Map(document.getElementById('map'), myOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: "You are here!"
+    });
+    </script>
+
+

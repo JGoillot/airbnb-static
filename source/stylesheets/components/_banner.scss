@@ -1,0 +1,22 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(-225deg, rgba(67,206,162,0.5) 0%, rgba(24,90,157,0.5) 50%), url('https://static.pexels.com/photos/41227/pexels-photo-41227-large.jpeg');
+  background-size: cover;
+}
+
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 50px;
+}

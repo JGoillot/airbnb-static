@@ -1,0 +1,13 @@
+---
+title : Our Awesome Team
+---
+
+<ul class="list-inline text-center">
+<h1>Our team</h1>
+  <% ["jeremy", "yann"].each do |member| %>
+    <li>
+      <%= image_tag "#{member}.png", class: "img-circle avatar-xl" %>
+      <h3><%= member.capitalize %></h3>
+    </li>
+  <% end %>
+</ul>
