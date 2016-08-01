@@ -50,44 +50,21 @@ title: Le Wagon Middleman boilerplate
     </div>
 
     <!-- Your cards code -->
-    <div class="wrapper-grey padded">
-      <div class="container">
-        <h2 class="text-center">Your next trip</h2>
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
-              <div class="card-category">Paris</div>
-              <div class="card-description">
-                <h2>Seb's home</h2>
-                <p>Charming room with patio</p>
-              </div>
-              <%= image_tag "images/seb.jpg", class: "card-user avatar avatar-large" %>
-              <%= link_to "Card link", "#", class: "card-link" %>
+    <div class="container">
+      <div class="row">
+        <% data.flats.each do |owner, flat| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: url('<%= image_path flat.picture %>');">
+            <div class="card-category"><%= flat.city %></div>
+            <div class="card-description">
+              <h2><%= flat.name %></h2>
+              <p><%= flat.summary %></p>
             </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://foto.hrsstatic.com/fotos/0/3/920/517/80/000000/http%3A%2F%2Ffoto-origin.hrsstatic.com%2Ffoto%2F2%2F5%2F1%2F4%2F251474%2F251474_f_12599448.jpg/fKSR2uDHu%2BTuEOK2yyDx2A%3D%3D/2048,1361/6/Holiday_Inn_BORDEAUX_-_SUD_PESSAC-Pessac-Wellness_and_fitness_area-13-251474.jpg');">
-              <div class="card-category">Pessac</div>
-              <div class="card-description">
-                <h2>Charly's House</h2>
-                <p>Museum of the king Regex</p>
-              </div>
-              <%= image_tag "https://emoji.slack-edge.com/T02NE0241/charlydev/410545836ec631ef.png", class: "card-user avatar avatar-large" %>
-              <%= link_to "Card link", "#", class: "card-link" %>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
-              <div class="card-category">London</div>
-              <div class="card-description">
-                <h2>Romain's home</h2>
-                <p>Nice flat in Piccadilly</p>
-              </div>
-              <%= image_tag "images/romain.jpeg", class: "card-user avatar avatar-large" %>
-              <%= link_to "Card link", "#", class: "card-link" %>
-            </div>
+            <%= image_tag flat.owner_picture, class:"card-user avatar avatar-large" %>
+            <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
           </div>
         </div>
+        <% end %>
       </div>
     </div>
 

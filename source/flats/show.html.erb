@@ -1,0 +1,88 @@
+<!-- source/flats/show.html.erb -->
+
+<!-- Read from data.flats with owner's name as key -->
+<% flat = data.flats[owner] %>
+
+<!-- Inject flat data in template -->
+
+<div class="flat-banner" style="background-image: linear-gradient(-225deg, rgba(67,206,162,0.5) 0%, rgba(24,90,157,0.5) 50%), url('<%= image_path flat.picture %>'); height: 50vh; background-position: center;">
+</div>
+
+<div class="header-flat">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+        <div class="header-flat-details">
+          <div class="header-flat-owner  text-center">
+            <%= image_tag flat.owner_picture, class: "avatar avatar-xl" %>
+            <p><%= flat.owner_name.match(/[a-zA-Z].* [a-zA-Z]/) %>.</p>
+          </div>
+          <div class="header-flat-name">
+            <h1><%= flat.summary %></h1>
+            <p><%= flat.city %></p>
+            <% flat.rating.times do %>
+            <i class="fa fa-star" style="color: #ffb400"></i>
+            <% end %>
+            <% (5 - flat.rating).times do %>
+            <i class="fa fa-star" style="color: #CACCCD"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-4">
+        <form action="#" >
+          <h4>Book this HackerHouse</h3>
+          <div class="form-group">
+            <div class="row">
+              <div class="col-xs-6">
+                <input type="text" class="form-control" placeholder="checkin" id="checkin">
+              </div>
+              <div class="col-xs-6">
+                <input type="text" class="form-control" placeholder="checkout">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <select name="" id="guests" class="form-control">
+              <option value="1">1 Charly</option>
+              <option value="2">2 Charly</option>
+              <option value="3">3 Charly</option>
+            </select>
+          </div>
+          <input type="submit" class="btn btn-primary" value="Book it" style="width: 100%">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="flat-description">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h2>About this flat</h2>
+        <p>
+          <%= flat.description %>
+        </p>
+        <hr>
+        <div class="text-center" id="flat-data">
+            <ul class="list-inline">
+              <% if flat.services.kitchen %>
+                <li><i class="fa fa-cutlery"></i><br>Kitchen</li>
+              <% end %>
+              <% if flat.services.wifi %>
+                <li><i class="fa fa-wifi"></i><br>Wifi</li>
+              <% end %>
+              <% if flat.services.tv %>
+                <li><i class="fa fa-desktop"></i><br>TV</li>
+              <% end %>
+              <% if flat.services.drink %>
+                <li><i class="fa fa-glass"></i><br>Welcome drink</li>
+              <% end %>
+            </ul>
+        </div>
+        </div>
+      </div>
+  </div>
+</div>
